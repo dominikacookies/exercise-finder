@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom";
 
+import "./Reset.css";
 import "./App.css";
 import Routes from "./Routes";
 

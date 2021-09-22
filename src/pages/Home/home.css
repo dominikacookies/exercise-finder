@@ -1,0 +1,17 @@
+main {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home-content-container {
+  width: 100%;
+  position: absolute;
+  bottom: 40%;
+}
+
+.home-buttons-container {
+  display: flex;
+  justify-content: center;
+}
