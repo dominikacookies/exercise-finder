@@ -12,13 +12,13 @@ const Home = () => {
         <h2>Start your workout now.</h2>
         <div className="home-buttons-container">
           <Button
-            label="Female"
+            label="FEMALE"
             mode="primary"
             size="large"
             onClick={() => history.push("/exercises/female")}
           />
           <Button
-            label="Male"
+            label="MALE"
             mode="primary"
             size="large"
             onClick={() => history.push("/exercises/male")}
