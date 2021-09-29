@@ -1,0 +1,19 @@
+.button--primary {
+  background-color: #18aedd;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button--large {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.button--small:hover,
+.button--medium:hover,
+.button--large:hover {
+  transform: scale(1.02);
+}
