@@ -1,0 +1,17 @@
+.card-image {
+  height: 280px;
+  width: 250px;
+  margin: 1.5rem;
+  background-position: "center";
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
+}
+
+.text-limit-one-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
