@@ -9,10 +9,12 @@ import maleBkg from "../../images/exercisesMale.jpg";
 import "./exercises.css";
 import displayCards from "../../utils/displayCards";
 import PageNavigation from "../../components/PageNavigation";
+import getPushExercises from "../../utils/getPushExercises";
 
 const Exercises = () => {
   const { type } = useParams();
   const [exercises, setExercises] = useState();
+  const [displayExercises, setDisplayExercises] = useState();
   const [page, setPage] = useState(1);
 
   const backgroundImage = type === "female" ? femaleBkg : maleBkg;
@@ -22,17 +24,24 @@ const Exercises = () => {
       const data = await fetchExercises();
       const fetchedExercises = data.exercises;
       setExercises(fetchedExercises);
+      setDisplayExercises(fetchedExercises);
     };
 
     getExercises();
   }, []);
 
   let maxPageRoundedUp;
-  if (exercises) {
-    const maxPage = exercises.length / 16;
+  if (displayExercises) {
+    const maxPage = displayExercises.length / 16;
     maxPageRoundedUp = Math.floor(maxPage);
-    console.log(maxPageRoundedUp);
   }
+
+  const displayPushExercises = () => {
+    const pushExercises = getPushExercises(exercises);
+    setPage(1);
+    setDisplayExercises(pushExercises);
+  };
+
   const onClickNextPage = () => {
     const nextPage = page + 1;
     setPage(nextPage);
@@ -45,10 +54,15 @@ const Exercises = () => {
 
   return (
     <main style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <h1 className="black-text"> Exercises </h1>
-      {exercises ? (
+      <h1 className="black-text header"> Build Your Workout </h1>
+      {displayExercises ? (
         <>
           <div className="exercises-container">
+            <div>
+              <button onClick={displayPushExercises}>PUSH</button>
+              <button>PULL</button>
+              <button>LEGS</button>
+            </div>
             {page === 1 && (
               <PageNavigation
                 firstPage={true}
@@ -69,7 +83,7 @@ const Exercises = () => {
             )}
 
             <div className="cards-container">
-              {displayCards(exercises, type, page)}
+              {displayCards(displayExercises, type, page)}
             </div>
             {page === 1 && (
               <PageNavigation
