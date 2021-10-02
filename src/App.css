@@ -16,7 +16,7 @@ main {
 
 h1 {
   font-size: 5rem;
-  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 h2 {
@@ -31,6 +31,10 @@ h3 {
 
 p {
   font-size: 1.5rem;
+}
+
+.header {
+  padding-top: 2rem;
 }
 
 .black-text {
