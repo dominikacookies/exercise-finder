@@ -1,12 +1,38 @@
-.card-image {
+.card-container {
   height: 280px;
-  width: 250px;
+  width: 260px;
   margin: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0.5px 0px 5px rgb(216, 216, 216);
+}
+.card-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   background-position: "center";
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  border-radius: 10px;
+}
+
+.card-container :hover {
+  transform: scale(1.02);
+}
+
+.card-preview-info {
+  width: 100%;
+  height: 23%;
+  background-color: rgba(80, 80, 80, 0.671);
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 0.5rem;
+}
+
+.exercise-muscle-text {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .text-limit-one-line {
