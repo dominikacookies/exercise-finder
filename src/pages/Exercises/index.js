@@ -5,9 +5,9 @@ import fetchExercises from "../../utils/fetchExercises";
 
 import femaleBkg from "../../images/exercisesFemale.jpg";
 import maleBkg from "../../images/exercisesMale.jpg";
-import Card from "../../components/Card";
 
 import "./exercises.css";
+import displayCards from "../../utils/displayCards";
 
 const Exercises = () => {
   const { type } = useParams();
@@ -27,16 +27,14 @@ const Exercises = () => {
   return (
     <main style={{ backgroundImage: `url(${femaleBkg})` }}>
       <h1> Exercises </h1>
-      <div>
-        {exercises ? (
-          <Card />
-        ) : (
-          <div>
-            <h3> Sorry, we couldn't find any exercises at this time.</h3>
-            <p> Please try again later </p>
-          </div>
-        )}
-      </div>
+      {exercises ? (
+        <div className="cards-container">{displayCards(exercises, type)}</div>
+      ) : (
+        <div>
+          <h3> Sorry, we couldn't find any exercises at this time.</h3>
+          <p> Please try again later </p>
+        </div>
+      )}
     </main>
   );
 };
