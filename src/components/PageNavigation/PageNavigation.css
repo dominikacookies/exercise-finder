@@ -1,0 +1,12 @@
+.page-icon-container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
