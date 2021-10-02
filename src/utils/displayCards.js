@@ -1,23 +1,26 @@
 import Card from "../components/Card";
 
 const displayCards = (exercises, type, page) => {
-  console.log("this type", type);
-  return exercises.map((exercise) => {
-    console.log(type);
-    const imageUrl =
-      type === "female" ? exercise.female.image : exercise.male.image;
+  const displayExercisesFrom = page > 1 ? (page - 1) * 16 + (page - 1) : 0;
+  const displayExercisesUpto = page > 1 ? page * 16 + (page - 1) : 16;
 
-    const muscles = exercise.bodyAreas.join(" ");
+  return exercises
+    .slice(displayExercisesFrom, displayExercisesUpto)
+    .map((exercise) => {
+      const imageUrl =
+        type === "female" ? exercise.female.image : exercise.male.image;
 
-    return (
-      <Card
-        imageUrl={imageUrl}
-        name={exercise.name}
-        muscles={muscles}
-        id={exercise.id}
-      />
-    );
-  });
+      const muscles = exercise.bodyAreas.join(" | ");
+
+      return (
+        <Card
+          imageUrl={imageUrl}
+          name={exercise.name}
+          muscles={muscles}
+          id={exercise.id}
+        />
+      );
+    });
 };
 
 export default displayCards;
