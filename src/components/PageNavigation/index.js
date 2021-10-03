@@ -15,14 +15,14 @@ const PageNavigation = ({
       ) : (
         <div className="page-navigation" onClick={onClickPreviousPage}>
           <GrPrevious size={20} />
-          <p className="black-text">Back</p>
+          <p>Back</p>
         </div>
       )}
       {lastPage ? (
         <div></div>
       ) : (
         <div className="page-navigation" onClick={onClickNextPage}>
-          <p className="black-text">Next</p>
+          <p>Next</p>
           <GrNext size={20} />
         </div>
       )}
