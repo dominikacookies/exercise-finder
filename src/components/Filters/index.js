@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import "./Filters.css";
 import Button from "../Button";
 import getPushExercises from "../../utils/getPushExercises";
 import getPullExercises from "../../utils/getPullExercises";
@@ -44,7 +45,7 @@ const Filters = ({ setPage, setDisplayExercises, exercises }) => {
   };
 
   return (
-    <div>
+    <div className="filters-container">
       <Button
         label="ALL"
         mode={allFilterButtonMode}
