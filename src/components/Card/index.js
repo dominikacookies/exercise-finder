@@ -17,7 +17,7 @@ const Card = ({ imageUrl, name, muscles, id, description }) => {
           className="card-image"
         >
           <div className="card-preview-info">
-            <h3 className="text-limit-one-line white-text"> {name} </h3>
+            <h3 className="text-limit-one-line white-text bold"> {name} </h3>
             <p className="exercise-muscle-text text-limit-one-line white-text">
               {muscles}
             </p>
