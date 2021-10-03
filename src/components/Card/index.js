@@ -34,7 +34,7 @@ const Card = ({ imageUrl, name, muscles, id, description }) => {
           <h2 className="bold eggshell-background">{name}</h2>
           <img src={imageUrl} className="exercise-preview-image"></img>
           <div className="eggshell-background">
-            <h3>Let's get started!</h3>
+            <h3 className="blue-text bold">Let's get started!</h3>
             <div dangerouslySetInnerHTML={html}></div>
           </div>
         </Offcanvas.Body>
