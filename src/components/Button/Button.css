@@ -1,19 +1,38 @@
 .button--primary {
   background-color: #18aedd;
-  border-radius: 0.8rem;
+  color: white;
   border: none;
   cursor: pointer;
   font-weight: bold;
+  box-shadow: 0.5px 0px 5px #98e7ff;
+}
+
+.button--inactive {
+  background-color: #c1c6c8;
+  color: #101820;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0.5px 0px 5px #c1c6c8;
+  cursor: not-allowed;
 }
 
 .button--large {
   margin: 1rem;
   padding: 1rem;
   font-size: 1.8rem;
+  border-radius: 0.8rem;
 }
 
-.button--small:hover,
-.button--medium:hover,
-.button--large:hover {
+.button--small {
+  margin: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.button--primary {
   transform: scale(1.02);
 }
