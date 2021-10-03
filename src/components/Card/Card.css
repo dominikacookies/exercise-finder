@@ -4,6 +4,7 @@
   margin: 1.5rem;
   border-radius: 10px;
   box-shadow: 0.5px 0px 5px rgb(216, 216, 216);
+  cursor: pointer;
 }
 .card-image {
   height: 100%;
@@ -22,7 +23,7 @@
 .card-preview-info {
   width: 100%;
   height: 23%;
-  background-color: rgba(80, 80, 80, 0.671);
+  background-color: #18afddbb;
   border-radius: 8px;
   position: absolute;
   bottom: 0;
@@ -51,8 +52,8 @@
 }
 
 .exercise-preview-image {
-  height: 40%;
-  width: 80%;
+  height: 45%;
+  width: 70%;
   position: "center";
   size: cover;
 }

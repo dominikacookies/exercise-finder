@@ -43,11 +43,15 @@ p {
 }
 
 .header {
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .white-text {
   color: rgb(255, 255, 255);
+}
+
+.blue-text {
+  color: #18afddbb;
 }
 
 .eggshell-background {
@@ -57,4 +61,8 @@ p {
   box-shadow: 0.2px 0px 2px rgba(255, 255, 255, 0.49);
   margin: auto;
   margin-top: 1.5rem;
+}
+
+.blue-background {
+  background-color: #18afddbb;
 }
