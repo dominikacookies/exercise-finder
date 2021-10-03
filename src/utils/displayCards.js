@@ -14,11 +14,12 @@ const displayCards = (exercises, type, page) => {
 
       return (
         <Card
+          id={exercise.id}
+          key={`${exercise.id}-${index}`}
           imageUrl={imageUrl}
           name={exercise.name}
           muscles={muscles}
-          id={exercise.id}
-          key={`${exercise.id}-${index}`}
+          description={exercise.transcript}
         />
       );
     });
