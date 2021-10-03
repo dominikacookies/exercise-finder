@@ -3,7 +3,7 @@ html {
 }
 
 * {
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   font-family: Helvetica;
 }
@@ -29,14 +29,32 @@ h3 {
   margin: 0.5rem;
 }
 
+h4 {
+  font-size: 1.8rem;
+  margin: 0.5rem;
+}
+
 p {
   font-size: 1.5rem;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .header {
   padding-top: 2rem;
 }
 
-.black-text {
-  color: black;
+.white-text {
+  color: rgb(255, 255, 255);
+}
+
+.eggshell-background {
+  width: 95%;
+  padding: 1rem;
+  background-color: #eef3f5ec;
+  box-shadow: 0.2px 0px 2px rgba(255, 255, 255, 0.49);
+  margin: auto;
+  margin-top: 1.5rem;
 }

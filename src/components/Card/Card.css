@@ -41,3 +41,22 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.offcanvas-card-image {
+  width: 100%;
+  height: 100%;
+  background-position: "center";
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.exercise-preview-image {
+  height: 40%;
+  width: 80%;
+  position: "center";
+  size: cover;
+}
+
+li {
+  font-size: 1.5rem;
+}
