@@ -6,7 +6,7 @@ const displayCards = (exercises, type, page) => {
 
   return exercises
     .slice(displayExercisesFrom, displayExercisesUpto)
-    .map((exercise) => {
+    .map((exercise, index) => {
       const imageUrl =
         type === "female" ? exercise.female.image : exercise.male.image;
 
@@ -18,6 +18,7 @@ const displayCards = (exercises, type, page) => {
           name={exercise.name}
           muscles={muscles}
           id={exercise.id}
+          key={`${exercise.id}-${index}`}
         />
       );
     });

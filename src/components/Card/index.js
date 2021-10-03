@@ -3,7 +3,7 @@ import "./Card.css";
 const Card = ({ imageUrl, name, muscles, id, exerciseInstructions }) => {
   return (
     <>
-      <div className="card-container">
+      <div className="card-container" key={id}>
         <div
           style={{ backgroundImage: "url(" + imageUrl + ")" }}
           className="card-image"
