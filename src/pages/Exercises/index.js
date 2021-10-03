@@ -9,10 +9,8 @@ import maleBkg from "../../images/exercisesMale.jpg";
 import "./exercises.css";
 import displayCards from "../../utils/displayCards";
 import PageNavigation from "../../components/PageNavigation";
-import getPushExercises from "../../utils/getPushExercises";
-import getPullExercises from "../../utils/getPullExercises";
-import getLegExercises from "../../utils/getLegExercises";
-import Button from "../../components/Button";
+
+import Filters from "../../components/Filters";
 
 const Exercises = () => {
   //identify if male/female images should be shown via params
@@ -32,6 +30,7 @@ const Exercises = () => {
     const getExercises = async () => {
       const data = await fetchExercises();
       const fetchedExercises = data.exercises;
+      console.log(fetchedExercises);
       setExercises(fetchedExercises);
       setDisplayExercises(fetchedExercises);
     };
@@ -46,30 +45,6 @@ const Exercises = () => {
     maxPageRoundedUp = Math.floor(maxPage);
   }
 
-  //logic for displaying exercises according to user selected filters
-  const displayAllExercises = () => {
-    setPage(1);
-    setDisplayExercises(exercises);
-  };
-
-  const displayPushExercises = () => {
-    const pushExercises = getPushExercises(exercises);
-    setPage(1);
-    setDisplayExercises(pushExercises);
-  };
-
-  const displayPullExercises = () => {
-    const pullExercises = getPullExercises(exercises);
-    setPage(1);
-    setDisplayExercises(pullExercises);
-  };
-
-  const displayLegExercises = () => {
-    const legExercises = getLegExercises(exercises);
-    setPage(1);
-    setDisplayExercises(legExercises);
-  };
-
   //logic for navigating to next and previous pages
   const onClickNextPage = () => {
     const nextPage = page + 1;
@@ -83,16 +58,15 @@ const Exercises = () => {
 
   return (
     <main style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <h1 className="black-text header"> Build Your Workout </h1>
+      <h1 className="header"> Build Your Workout </h1>
       {displayExercises ? (
         <>
           <div className="exercises-container">
-            <div>
-              <Button label="ALL" onClick={displayAllExercises} />
-              <button onClick={displayPushExercises}>PUSH</button>
-              <button onClick={displayPullExercises}>PULL</button>
-              <button onClick={displayLegExercises}>LEGS</button>
-            </div>
+            <Filters
+              setPage={setPage}
+              setDisplayExercises={setDisplayExercises}
+              exercises={exercises}
+            />
             {page === 1 && (
               <PageNavigation
                 firstPage={true}
