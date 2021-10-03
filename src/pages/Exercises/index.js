@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import fetchExercises from "../../utils/fetchExercises";
+import displayCards from "../../utils/displayCards";
 
+import "./Exercises.css";
+import Filters from "../../components/Filters";
+import PageNavigation from "../../components/PageNavigation";
 import femaleBkg from "../../images/exercisesFemale.jpg";
 import maleBkg from "../../images/exercisesMale.jpg";
 
-import "./exercises.css";
-import displayCards from "../../utils/displayCards";
-import PageNavigation from "../../components/PageNavigation";
-
-import Filters from "../../components/Filters";
-
 const Exercises = () => {
-  //identify if male/female images should be shown via params
+  //identify if male/female images should be shown by reading params
   const { type } = useParams();
   //exercises fetched from the api
   const [exercises, setExercises] = useState();
@@ -22,27 +21,36 @@ const Exercises = () => {
   //page of exercises the user is currently viewing
   const [page, setPage] = useState(1);
 
-  //set background image for the page based on type of image chosen
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+
+  //background image for the page based on type of image chosen
   const backgroundImage = type === "female" ? femaleBkg : maleBkg;
 
   //fetch all exercises from the API
   useEffect(() => {
-    const getExercises = async () => {
-      const data = await fetchExercises();
-      const fetchedExercises = data.exercises;
-      console.log(fetchedExercises);
-      setExercises(fetchedExercises);
-      setDisplayExercises(fetchedExercises);
-    };
+    try {
+      const getExercises = async () => {
+        const data = await fetchExercises();
+        const fetchedExercises = data.exercises;
+        setLoading(false);
+        setError(false);
+        setExercises(fetchedExercises);
+        setDisplayExercises(fetchedExercises);
+      };
 
-    getExercises();
+      getExercises();
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
   }, []);
 
   //identify the maximum page limit that exercises can be shown for
-  let maxPageRoundedUp;
+  let maxPageRoundedDown;
   if (displayExercises) {
     const maxPage = displayExercises.length / 16;
-    maxPageRoundedUp = Math.floor(maxPage);
+    maxPageRoundedDown = Math.round(maxPage);
   }
 
   //logic for navigating to next and previous pages
@@ -58,8 +66,13 @@ const Exercises = () => {
 
   return (
     <main style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <h1 className="header"> Build Your Workout </h1>
-      {displayExercises ? (
+      {!error && (
+        <>
+          <h1 className="header bold"> Build Your Workout </h1>
+          <h2> Be all that you imagined you could be. Be a visionary.</h2>
+        </>
+      )}
+      {displayExercises && (
         <>
           <div className="exercises-container">
             <Filters
@@ -73,13 +86,13 @@ const Exercises = () => {
                 onClickNextPage={onClickNextPage}
               />
             )}
-            {page === maxPageRoundedUp && (
+            {page === maxPageRoundedDown && page !== 1 && (
               <PageNavigation
                 lastPage={true}
                 onClickPreviousPage={onClickPreviousPage}
               />
             )}
-            {page !== maxPageRoundedUp && page !== 1 && (
+            {page !== maxPageRoundedDown && page !== 1 && (
               <PageNavigation
                 onClickNextPage={onClickNextPage}
                 onClickPreviousPage={onClickPreviousPage}
@@ -95,13 +108,13 @@ const Exercises = () => {
                 onClickNextPage={onClickNextPage}
               />
             )}
-            {page === maxPageRoundedUp && (
+            {page === maxPageRoundedDown && page !== 1 && (
               <PageNavigation
                 lastPage={true}
                 onClickPreviousPage={onClickPreviousPage}
               />
             )}
-            {page !== maxPageRoundedUp && page !== 1 && (
+            {page !== maxPageRoundedDown && page !== 1 && (
               <PageNavigation
                 onClickNextPage={onClickNextPage}
                 onClickPreviousPage={onClickPreviousPage}
@@ -109,7 +122,9 @@ const Exercises = () => {
             )}
           </div>
         </>
-      ) : (
+      )}
+      {loading && <Spinner animation="border" variant="info" />}
+      {error && (
         <div>
           <h3> Sorry, we couldn't find any exercises at this time.</h3>
           <p> Please try again later </p>
