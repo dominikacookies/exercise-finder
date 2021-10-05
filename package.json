@@ -1,6 +1,5 @@
 {
   "name": "exercise-finder",
-  "homepage": "https://dominikacookies.github.io/exercise-finder/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +18,7 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "homepage": "https://dominikacookies.github.io/exercise-finder/",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
