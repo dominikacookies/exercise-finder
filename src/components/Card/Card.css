@@ -1,6 +1,6 @@
 .card-container {
-  height: 280px;
-  width: 260px;
+  height: 28rem;
+  width: 26rem;
   margin: 1.5rem;
   border-radius: 10px;
   box-shadow: 0.5px 0px 5px rgb(216, 216, 216);
@@ -52,8 +52,8 @@
 }
 
 .exercise-preview-image {
-  height: 45%;
-  width: 70%;
+  height: 29rem;
+  width: 28rem;
   position: "center";
   size: cover;
 }
