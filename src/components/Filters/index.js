@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import "./Filters.css";
 import Button from "../Button";
-import getPushExercises from "../../utils/getPushExercises";
-import getPullExercises from "../../utils/getPullExercises";
-import getLegExercises from "../../utils/getLegExercises";
+import getPushExercises from "../../utils/filterExercises/getPushExercises";
+import getPullExercises from "../../utils/filterExercises/getPullExercises";
+import getLegExercises from "../../utils/filterExercises/getLegExercises";
 
 const Filters = ({ setPage, setDisplayExercises, exercises }) => {
   //filters as chosen by the user
