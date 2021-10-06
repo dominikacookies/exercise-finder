@@ -5,6 +5,7 @@ const Button = ({ label, size, mode, onClick }) => {
     <button
       className={[`button--${mode}`, `button--${size}`].join(" ")}
       onClick={onClick}
+      data-testid="button"
     >
       {label}
     </button>
