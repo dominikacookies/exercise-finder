@@ -2,7 +2,7 @@
 
 ## Live Link
 
-Click [here](https://stormy-stream-13655.herokuapp.com/) to view the project on Heroku.
+Click [here](https://build-your-workout.herokuapp.com/) to view the project.
 
 <h2> Table of Contents </h2>
 
