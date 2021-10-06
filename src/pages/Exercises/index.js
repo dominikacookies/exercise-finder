@@ -33,6 +33,13 @@ const Exercises = () => {
       const getExercises = async () => {
         const data = await fetchExercises();
         const fetchedExercises = data.exercises;
+
+        if (!data.exercises) {
+          setLoading(false);
+          setError(true);
+          return;
+        }
+
         setLoading(false);
         setError(false);
         setExercises(fetchedExercises);
