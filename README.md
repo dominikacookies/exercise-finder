@@ -23,17 +23,28 @@ The application levereages the axios npm package to retrieve fitness exercises f
 - pagination
 - filtering of exercises base on the push/pull/legs workout split
 - exercise images are displayed in accordance to the type (male/female) chosen by the user
-- basic tests for util logic and component rendering
 - device responsive UI
+- basic tests for filtering logic and component rendering
 
 ### Technologies Used
 
 - Reactjs
 - axios
-- jest
 - react-testing-library
 
 ## Screenshots
+
+Homepage
+![image](./src/images/readme/homepage.png)
+
+Exercises results page
+![image](./src/images/readme/exercise-page.png)
+
+Exercises results page with applied filter
+![image](./src/images/readme/exercise-page-filtered.png)
+
+Exercise preview
+![image](./src/images/readme/exercise-preview.png)
 
 ## Getting Started
 
