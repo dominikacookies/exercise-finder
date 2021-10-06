@@ -51,28 +51,24 @@ const Filters = ({ setPage, setDisplayExercises, exercises }) => {
         mode={allFilterButtonMode}
         size="small"
         onClick={displayAllExercises}
-        id="all-filter-button"
       />
       <Button
         label="PUSH"
         mode={pushFilterButtonMode}
         size="small"
         onClick={displayPushExercises}
-        id="push-filter-button"
       />
       <Button
         label="PULL"
         mode={pullFilterButtonMode}
         size="small"
         onClick={displayPullExercises}
-        id="pull-filter-button"
       />
       <Button
         label="LEGS"
         mode={legsFilterButtonMode}
         size="small"
         onClick={displayLegExercises}
-        id="legs-filter-button"
       />
     </div>
   );
