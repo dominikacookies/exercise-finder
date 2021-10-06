@@ -1,7 +1,8 @@
-import Button from "../../components/Button";
-import "./Home.css";
-import background from "../../images/hp-bkg.png";
 import { useHistory } from "react-router-dom";
+
+import "./Home.css";
+import Button from "../../components/Button";
+import background from "../../images/hp-bkg.png";
 
 const Home = () => {
   let history = useHistory();
