@@ -1,4 +1,4 @@
-<h1>Vegan Pals</h1>
+<h1>Exercise Finder</h1>
 
 ## Live Link
 
