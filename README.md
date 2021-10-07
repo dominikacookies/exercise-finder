@@ -48,9 +48,6 @@ Exercise preview
 
 ## Getting Started
 
-- Clone the GitHub project into your local machine
-- Navigate into the project
-
 ```
 git clone https://github.com/dominikacookies/exercise-finder.git
 cd exercise-finder
